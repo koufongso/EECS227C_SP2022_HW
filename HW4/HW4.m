@@ -12,7 +12,7 @@ for i=1:k
     
     f = @(x) a'*x-ones(1,10)*log(1-x.^2);
     Df = @(x) a+2*x./(1-x.^2);
-    Hf = @(x) diag((1+2*(x.^2))./((1-x.^2).^2));
+    Hf = @(x) diag((2+2*(x.^2))./((1-x.^2).^2));
     lambda = @(x) sqrt(Df(x)'*(Hf(x)\Df(x)));
     
     x = zeros(10,1);
